@@ -15,16 +15,17 @@ const initstate={
 
 
 const RecipeForm=()=>{
-    const[data,setData]=useState(initstate);
-   
-    const{title,Ingredients,cookingtime,instructions,price}=data
+    const[data,setData]=useState("");
+    const[state,setState]=useState([])
+    const{title,Ingredients,cookingtime,instructions,price}=data;
 
     const inputevent=(event)=>{
        setData(event.target.value)
       console.log(event.target.value);
     }
-   const Addrecipe=()=>{
-       console.log("hello")
+   const Addrecipe=(olditems)=>{
+      // console.log("hello")
+     setState=[...olditems,data]
    }
 
   return (
